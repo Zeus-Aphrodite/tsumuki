@@ -674,11 +674,12 @@ table tbody tr:hover > th {
 }
 .site-branding img {
   max-height: 46px;
-  position: ;
+  /* position: ; */
 }
 
 #masthead {
   position: fixed;
+  display: none;
   width: 100%;
   left: 0;
   top: 40px;
