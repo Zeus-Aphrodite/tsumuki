@@ -1881,7 +1881,18 @@ document.addEventListener("DOMContentLoaded", function() {
 <script src="./assets/js/plugin.js?ver=1.0.0" id="plugin_js-js"></script>
 <script src="./assets/js/custom.js?ver=1.0.0" id="custom_js-js"></script>
 <script src="./assets/js/dflip.min.js?ver=2.2.32" id="dflip-script-js"></script>
-<script>// Select all elements to animate
+ <script>
+   if (localStorage.getItem('visited')) {
+      // If the page is being reloaded, remove 'visited' flag and navigate to index.html
+      window.addEventListener('load', function() {
+        // Check if it's a reload (you can use performance.navigation.type or other methods)
+        if (performance.navigation.type === 1) { // 1 indicates a reload
+          localStorage.removeItem('visited');
+          window.location.href = 'index.html';
+        }
+      });
+    }
+  </script><script>// Select all elements to animate
  const divs = document.querySelectorAll(".sec");
 
   const observerOptions = {

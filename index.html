@@ -14,10 +14,18 @@
     <img src="assets/img/svg/loading4.svg" alt="loading4" srcset="">
     <img src="assets/img/svg/loading5.svg" alt="loading5" srcset="">
     <img src="assets/img/svg/loading6.svg" alt="loading6" srcset="">
-    <script>
-    setTimeout(() => {
-      window.location.href = "main.html"; 
-    }, 4000);
+    <script src="./assets//js/nav.js">
+    
+    
     </script>
+       <script>
+    // If 'visited' flag is not set, navigate to main.html after 4000 ms
+    if (!localStorage.getItem('visited')) {
+      setTimeout(function() {
+        localStorage.setItem('visited', 'true');
+        window.location.href = 'main.html';
+      }, 4000);
+    }
+  </script>
 </body>
 </html>
