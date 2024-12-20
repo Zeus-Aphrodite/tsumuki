@@ -2782,15 +2782,15 @@ width: 100%;
   height: 100%;
   width: 100%;
 }
-.content-svg svg{
+/* .content-svg svg{
      width: 80%;
     max-width: none;
     position: relative;
     /* top: 0; */
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%;
+    transform: translateX(-50%); */
 /*     margin-top: -100%; */
-}
+
 
 /*--------------------------------------------------------------
 # single
@@ -3802,7 +3802,7 @@ width: 100%;
 /* Màn hình nhỏ hơn hoặc bằng 680px */
 @media (max-width: 680px) {
     .section-svg-animation .svg-left svg {
-        width: 103%;
+        width: 103%;
         margin-top: 0%;
         margin-left: 0%;
 		height: 3744px;
@@ -3939,4 +3939,110 @@ width: 100%;
 .animatedPath11, .animatedPath12, .animatedPath1 {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
+}
+
+ /* Set initial styles for the div */
+   .target-svg {
+      height: fit-content;
+      width: fit-content;
+      position: relative;
+   
+    padding: 10px;
+    }
+
+    /* Pseudo-elements for each side of the border */
+   .target-svg::before, 
+   .target-svg::after, 
+   .target-svg span, 
+   .target-svg div {
+      content: '';
+      position: absolute;
+      background-color: black;
+      margin: 7px;
+    }
+
+    /* Top border animation */
+   .target-svg::before {
+      top: 0;
+      left: 0;
+      width: 0; /* Initially width is 0 */
+      height: 1px;
+      animation: draw-top 2s forwards;
+      opacity: 0.1; /* Delay for 6s */
+    }
+
+    /* Right border animation */
+   .target-svg::after {
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 2px; /* Initially height is 0 */
+      animation: draw-right 2s forwards 2s; 
+      opacity: 0.1; /* Delay for 6s */
+    }
+
+    /* Bottom border animation */
+   .target-svg span {
+      bottom: 0;
+      left: 0;
+      width: 2px; /* Initially width is 0 */
+      height: 1px;
+      animation: draw-bottom 2s forwards 2s;
+      opacity: 0.1; /* Delay for 6s */
+    }
+
+    /* Left border animation */
+   .target-svg div {
+      bottom: 0;
+      left: 0;
+      width: 1px;
+      height: 2px; /* Initially height is 0 */
+      animation: draw-left 2s forwards 2s;
+      opacity: 0.1; /* Delay for 6s */
+    }
+
+    /* Keyframe animations for drawing borders */
+    @keyframes draw-top {
+      to {
+        width: 100%; /* Draw top side */
+      }
+    }
+
+    @keyframes draw-right {
+      to {
+        height: 100%; /* Draw right side */
+      }
+    }
+
+    @keyframes draw-bottom {
+      to {
+        width: 100%; /* Draw bottom side */
+      }
+    }
+
+    @keyframes draw-left {
+      to {
+        height: 100%; /* Draw left side */
+      }
+    }
+     .dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fff; /* White dots */
+      border-radius: 50%;
+      pointer-events: none; /* Dots are not clickable */
+    }
+
+    .sec{
+  width: 100%;
+ 
+opacity: 0;
+   transform: scale(0.5); /* Start smaller */
+  transition: all 1s ease-out;
+}
+
+.sec.visible {
+  opacity: 1;
+  transform: scale(1); /* Scale to normal size */
 }
