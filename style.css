@@ -1372,8 +1372,8 @@ background: linear-gradient(90deg, #EE975B 0%, #CB641C 100%);
   top: 0;
   left: 0;
   width: 100%;
-  opacity: 0;
-/*  transition:opacity 0.4s;*/
+ opacity: 0.5;
+ transition:opacity 0.5s;
 }
 .tsumugu .item-tsumugu-scroll.active{
   opacity: 1 !important;
@@ -1384,14 +1384,19 @@ background: linear-gradient(90deg, #EE975B 0%, #CB641C 100%);
   opacity:0;
 }
 .tsumugu .item-tsumugu-scroll.active .slider-tsumugu-text{
-      -webkit-animation: transformUp 1.3s linear 0s forwards;
-    animation: transformUp 1.3s  linear 0s forwards;
+      -webkit-animation: transformUp 0.5s linear 0s forwards;
+    animation: transformUp 0.5s  linear 0s forwards;
 }
-
+.tsumugu .item-tsumugu-scroll.active:nth-child(even) .thumb:hover{
+transform: rotate(5deg);
+}
+.tsumugu .item-tsumugu-scroll.active:nth-child(odd) .thumb:hover{
+transform: rotate(-5deg);
+}
 @-webkit-keyframes transformUp {
     0% {
-        transform: translateY(100px);
-        opacity:0;
+        transform: translateY(50px);
+        opacity:0.5;
     }
 
     to {
@@ -1402,8 +1407,8 @@ background: linear-gradient(90deg, #EE975B 0%, #CB641C 100%);
 
 @keyframes transformUp {
     0% {
-        transform: translateY(100px);
-        opacity:0;
+        transform: translateY(50px);
+        opacity:0.5;
     }
 
     to {
