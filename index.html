@@ -1921,7 +1921,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const paths = document.querySelectorAll(".scrollanimation");
 
   let progress = scrollPosition / totalHeight;
-console.log(scrollPosition)
+  console.log(scrollPosition)
 if(scrollPosition>=1000&&scrollPosition<2000){
    progress = progress *2;
 }
@@ -1972,10 +1972,8 @@ if(scrollPosition>=1000&&scrollPosition<2000){
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible"); // Add animation class
-        console.log(`Div ${entry.target.id} is now visible.`);
       } else {
         entry.target.classList.remove("visible"); // Optional: remove class when out of view
-        console.log(`Div ${entry.target.id} is hidden.`);
       }
     });
   }, observerOptions);

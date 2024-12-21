@@ -483,19 +483,22 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollContainer.style.width = `${scrollContainer.scrollWidth}px`;
 
         gsap.to(scrollContainer, {
-            x: () => -scrollContainer.scrollWidth + innerWidth - innerWidth / 18 * 3 | 0,
-            scrollTrigger: {
-                trigger: serviceSection,
-                start: "top top",
-                end: () => "+=" + scrollContainer.scrollWidth,
-                scrub: 0.25,
-                pin: true,
-                pinSpacing: true,
-                onEnter: () => document.body.classList.add("is-business-show"),
-                onEnterBack: () => document.body.classList.add("is-business-show"),
-                onLeave: () => document.body.classList.remove("is-business-show"),
-                onLeaveBack: () => document.body.classList.remove("is-business-show")
-            }
+          x: () =>
+            (scrollContainer.scrollWidth - innerWidth + (innerWidth / 18) * 3) |
+            0,
+          scrollTrigger: {
+            trigger: serviceSection,
+            start: "top top",
+            end: () => "+=" + scrollContainer.scrollWidth,
+            scrub: 0.25,
+            pin: true,
+            pinSpacing: true,
+            onEnter: () => document.body.classList.add("is-business-show"),
+            onEnterBack: () => document.body.classList.add("is-business-show"),
+            onLeave: () => document.body.classList.remove("is-business-show"),
+            onLeaveBack: () =>
+              document.body.classList.remove("is-business-show"),
+          },
         });
 
         serviceSection.querySelectorAll(".item-service").forEach(item => {
