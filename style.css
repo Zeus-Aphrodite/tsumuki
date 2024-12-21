@@ -1060,6 +1060,7 @@ background: linear-gradient(90deg, #EE975B 0%, #CB641C 100%);
   padding-top: 44px;
   padding-bottom: 175px;
   margin-top:-265px;
+  margin-left: 30%;
 }
 
 
@@ -4034,16 +4035,13 @@ width: 100%;
       border-radius: 50%;
       pointer-events: none; /* Dots are not clickable */
     }
+.imgsa{
+  position: absolute;
 
-    .sec{
-  width: 100%;
- 
-opacity: 0;
-   transform: scale(0.5); /* Start smaller */
-  transition: all 1s ease-out;
+  top: 30%;
+  left: 20%;
+ min-width: 550px;
 }
-
-.sec.visible {
-  opacity: 1;
-  transform: scale(1); /* Scale to normal size */
+.text-svg-mar{
+  margin-left: 60%;
 }
