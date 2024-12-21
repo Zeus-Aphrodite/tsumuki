@@ -944,7 +944,7 @@ background: linear-gradient(90deg, #EE975B 0%, #CB641C 100%);
 }
 .section-svg-animation {
   padding-top: 196px;
-  background-color: #F3F2F0;
+  background-color:#F3F2F0
 }
 
 .section-svg-animation .sss-top{
@@ -4037,11 +4037,14 @@ width: 100%;
     }
 .imgsa{
   position: absolute;
-
-  top: 30%;
-  left: 20%;
- min-width: 550px;
+transform: rotate(180deg);
+  top: -20%;
+  opacity: 0.5;
+  left: -10%;
+ min-width: 800px;
+ min-height: 600px;
 }
 .text-svg-mar{
   margin-left: 60%;
 }
+
